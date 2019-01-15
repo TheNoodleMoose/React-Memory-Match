@@ -7,8 +7,8 @@ class Jumbotron extends Component {
       <JumbotronDiv>
         <h1>Spongebob Memory Match!</h1>
         <h3>
-          Click on an the spongebobs to earn points, but be sure not to click
-          the same spongebob twice!
+          Click on the spongebobs to earn points, but be sure not to click the
+          same spongebob twice!
         </h3>
       </JumbotronDiv>
     );
