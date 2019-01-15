@@ -19,6 +19,9 @@ export default Navbar;
 
 const NavbarItem = styled.h3`
   color: white;
+  @media (max-width: 700px) {
+    font-size: 16px;
+  }
 `;
 
 const NavbarContainer = styled.div`
@@ -38,4 +41,7 @@ const NavBar = styled.div`
   position: fixed;
   text-align: center;
   top: 0;
+  @media (max-width: 700px) {
+    height: 10px;
+  }
 `;
