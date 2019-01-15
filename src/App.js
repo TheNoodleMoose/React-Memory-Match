@@ -8,6 +8,7 @@ import spongebobs from "./spongebobs.json";
 
 class App extends Component {
   state = {
+    status: "Click An Image To Begin",
     score: 0,
     topScore: 0,
     cards: spongebobs
@@ -20,8 +21,18 @@ class App extends Component {
     }
   };
 
+  setGameStart = () => {
+    this.setState({
+      status: "Click An Image To Begin",
+      cards: spongebobs,
+      score: 0,
+      topScore: 0
+    });
+  };
+
   setInitialState = () => {
     this.setState({
+      status: "Wrong Answer! Click An Image To Try Again!",
       cards: spongebobs,
       score: 0
     });
@@ -37,7 +48,10 @@ class App extends Component {
       newArray[index].clicked = true;
       this.addToScore(this.state.score);
       this.setTopScore();
-      this.setState({ cards: newArray });
+      this.setState({
+        cards: newArray,
+        status: "Correct Choice!"
+      });
     } else if (newArray[index].clicked === true) {
       console.log("I Have already been clicked");
       this.setInitialState();
@@ -52,18 +66,22 @@ class App extends Component {
   };
 
   setTopScore = () => {
-    if (this.state.score >= this.state.topScore) {
-      this.setState({
-        topScore: this.state.topScore + 1
-      });
+    if (this.state.topScore < 12) {
+      if (this.state.score >= this.state.topScore) {
+        this.setState({
+          topScore: this.state.topScore + 1
+        });
+      }
+    } else if (this.state.topScore >= 12) {
+      this.setGameStart();
     }
   };
 
   render() {
-    const { cards, score, topScore } = this.state;
+    const { cards, score, topScore, status } = this.state;
     return (
       <div>
-        <Navbar score={score} topScore={topScore} />
+        <Navbar score={score} topScore={topScore} status={status} />
         <Jumbotron />
         <CardGridContainer>
           <CardGrid>

@@ -6,7 +6,7 @@ const Navbar = props => {
     <NavBar>
       <NavbarContainer>
         <NavbarItem>Clicky Game</NavbarItem>
-        <NavbarItem>Click An Image To Begin</NavbarItem>
+        <NavbarItem>{props.status}</NavbarItem>
         <NavbarItem>
           Score: {props.score} | Top Score: {props.topScore}
         </NavbarItem>
