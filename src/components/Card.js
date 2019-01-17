@@ -2,10 +2,11 @@ import React from "react";
 import styled from "styled-components";
 
 const Card = props => {
+  const { card, handleClick } = props;
   return (
     <CardContainer
-      style={{ backgroundImage: `url("${props.card.background}")` }}
-      onClick={() => props.handleClick(props.card)}
+      style={{ backgroundImage: `url("${card.background}")` }}
+      onClick={() => handleClick(card)}
     />
   );
 };

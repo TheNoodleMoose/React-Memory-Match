@@ -2,13 +2,14 @@ import React from "react";
 import styled from "styled-components";
 
 const Navbar = props => {
+  const { status, score, topScore } = props;
   return (
     <NavBar>
       <NavbarContainer>
         <NavbarItem>Clicky Game</NavbarItem>
-        <NavbarItem>{props.status}</NavbarItem>
+        <NavbarItem>{status}</NavbarItem>
         <NavbarItem>
-          Score: {props.score} | Top Score: {props.topScore}
+          Score: {score} | Top Score: {topScore}
         </NavbarItem>
       </NavbarContainer>
     </NavBar>
