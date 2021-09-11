@@ -1,7 +1,19 @@
 import React from "react";
 import styled from "styled-components";
-const Card = (props) => {
-  const { card, handleClick } = props;
+
+export interface CardType {
+  id: number;
+  name: string;
+  background: string;
+  clicked: boolean;
+}
+
+interface CardProps {
+  card: CardType;
+  handleClick: (card: CardType) => void;
+}
+
+const Card: React.FC<CardProps> = ({ card, handleClick }: CardProps) => {
   return (
     <CardContainer
       src={require(`../assets/images/${card.background}`)}

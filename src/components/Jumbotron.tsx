@@ -1,19 +1,18 @@
-import React, { Component } from "react";
+import React from "react";
 import styled from "styled-components";
 
-class Jumbotron extends Component {
-  render() {
-    return (
-      <JumbotronDiv>
-        <h1>Spongebob Memory Match!</h1>
-        <h3>
-          Click on the spongebobs to earn points, but be sure not to click the
-          same spongebob twice!
-        </h3>
-      </JumbotronDiv>
-    );
-  }
-}
+const Jumbotron: React.FC = () => {
+  return (
+    <JumbotronDiv>
+      <h1>Spongebob Memory Match!</h1>
+      <h3>
+        Click on the spongebobs to earn points, but be sure not to click the
+        same spongebob twice!
+      </h3>
+    </JumbotronDiv>
+  );
+};
+
 export default Jumbotron;
 
 const JumbotronDiv = styled.div`
