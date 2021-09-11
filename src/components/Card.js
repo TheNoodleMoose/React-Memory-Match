@@ -1,11 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-
-const Card = props => {
+const Card = (props) => {
   const { card, handleClick } = props;
   return (
     <CardContainer
-      style={{ backgroundImage: `url("${card.background}")` }}
+      src={require(`../assets/images/${card.background}`)}
       onClick={() => handleClick(card)}
     />
   );
@@ -13,7 +12,7 @@ const Card = props => {
 
 export default Card;
 
-const CardContainer = styled.div`
+const CardContainer = styled.img`
   margin: 0 10px;
   width: 150px;
   height: 150px;
