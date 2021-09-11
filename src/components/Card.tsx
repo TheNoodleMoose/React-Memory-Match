@@ -1,11 +1,22 @@
 import React from "react";
 import styled from "styled-components";
 
-const Card = props => {
-  const { card, handleClick } = props;
+export interface CardType {
+  id: number;
+  name: string;
+  background: string;
+  clicked: boolean;
+}
+
+interface CardProps {
+  card: CardType;
+  handleClick: (card: CardType) => void;
+}
+
+const Card: React.FC<CardProps> = ({ card, handleClick }: CardProps) => {
   return (
     <CardContainer
-      style={{ backgroundImage: `url("${card.background}")` }}
+      src={require(`../assets/images/${card.background}`)}
       onClick={() => handleClick(card)}
     />
   );
@@ -13,7 +24,7 @@ const Card = props => {
 
 export default Card;
 
-const CardContainer = styled.div`
+const CardContainer = styled.img`
   margin: 0 10px;
   width: 150px;
   height: 150px;

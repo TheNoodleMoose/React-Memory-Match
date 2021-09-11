@@ -1,8 +1,17 @@
 import React from "react";
 import styled from "styled-components";
 
-const Navbar = props => {
-  const { status, score, topScore } = props;
+interface NavbarProps {
+  status: string;
+  score: number;
+  topScore: number;
+}
+
+const Navbar: React.FC<NavbarProps> = ({
+  status,
+  score,
+  topScore
+}: NavbarProps) => {
   return (
     <NavBar>
       <NavbarContainer>
